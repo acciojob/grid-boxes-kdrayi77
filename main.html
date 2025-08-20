@@ -20,8 +20,9 @@
                 "header header header"
                 "sidebar content1 content2"
                 "sidebar content3 content4"
+                "sidebar content3 content4"
                 "sidebar footer footer";
-            grid-template-rows: 100px 1fr 1fr 100px;
+            grid-template-rows: 100px 1fr 1fr 1fr 100px;
             grid-template-columns: 25% 1fr 1fr;
             height: 100vh;
         }
@@ -38,13 +39,27 @@
         }
         
         /* Specific grid areas */
-        .header { grid-area: header; }
+        .header { 
+            grid-area: header; 
+            /* Border has been restored */
+        }
         .sidebar { grid-area: sidebar; }
-        .content-1 { grid-area: content1; }
+        .content-1 { 
+            grid-area: content1; 
+            /* Border has been restored */
+        }
         .content-2 { grid-area: content2; }
         .content-3 { grid-area: content3; }
         .content-4 { grid-area: content4; }
         .footer { grid-area: footer; }
+        
+        /* Correcting the spans based on the image */
+        .sidebar {
+            grid-row: span 4;
+        }
+        .content-3 {
+            grid-row: span 2;
+        }
 
         /* Responsive design for smaller screens */
         @media (max-width: 768px) {
