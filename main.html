@@ -15,12 +15,12 @@
     }
     #grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto;
-      gap: 5px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 120px;
+      gap: 5px;  /* keeps white borders */
       width: 90%;
       height: 90%;
-      background: white;
+      background: white; /* background to make borders visible */
     }
     .box {
       background: green;
@@ -31,16 +31,18 @@
       align-items: flex-start;
       padding: 10px;
     }
-    .box1 { grid-column: 1 / 4; }
-    .box2 { grid-row: 2 / 6; grid-column: 1 / 2; }
-    .box3 { grid-column: 2 / 3; grid-row: 2 / 3; }
-    .box4 { grid-column: 3 / 4; grid-row: 2 / 3; }
-    .box5 { grid-column: 2 / 3; grid-row: 3 / 4; }
-    .box6 { grid-column: 3 / 4; grid-row: 3 / 4; }
-    .box7 { grid-column: 2 / 3; grid-row: 4 / 5; }
-    .box8 { grid-column: 3 / 4; grid-row: 4 / 5; }
-    .box9 { grid-column: 3 / 4; grid-row: 4 / 5; }
-    .box10 { grid-column: 2 / 4; grid-row: 5 / 6; }
+
+    /* Layout with span syntax */
+    .box1 { grid-column: span 4 / auto; }
+    .box2 { grid-row: span 4; grid-column: span 1; }
+    .box3 { grid-column: span 1; }
+    .box4 { grid-column: span 2; }
+    .box5 { grid-column: span 2; }
+    .box6 { grid-column: span 1; }
+    .box7 { grid-column: span 1; }
+    .box8 { grid-column: span 1; }
+    .box9 { grid-column: span 1; }
+    .box10 { grid-column: span 3; }
   </style>
 </head>
 <body>
